@@ -1,13 +1,13 @@
 import Ember from 'ember';
-import { initialize } from 'geneus/initializers/auth';
+import { initialize } from 'firebaseblog/initializers/auth';
 
 var container, application;
 
 module('AuthInitializer', {
   setup: function() {
     Ember.run(function() {
-      container = new Ember.Container();
       application = Ember.Application.create();
+      container = application.__container__;
       application.deferReadiness();
     });
   }
